@@ -4,7 +4,7 @@
   tasks:
     - name: Import VPC Variables
       include_vars: vars/vpc_setup
-    - name: Create Public VPC
+    - name: Create Project VPC
       ec2_vpc_net:
         name: "{{vpc_name}}"
         cidr_block: "{{vpcCidr}}"
@@ -13,5 +13,5 @@
         dns_hostnames: yes
         tenancy: default
         state: "{{state}}"
-      register: vpcout
+      register: vpc out
 
