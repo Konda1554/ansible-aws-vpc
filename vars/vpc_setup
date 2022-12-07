@@ -3,10 +3,10 @@ vpc_name: "Project-vpc"
 vpcCidr: '10.0.0.0/16'
 
 # Subnets Range
-PubSub1Cidr: '10.0.1.0/24'
-PubSub2Cidr: '10.0.2.0/24'
-PrivSub1Cidr: '10.0.3.0/24'
-PrivSub2Cidr: '10.0.4.0/24'
+PubSub1Cidr:  10.0.1.0/24
+PubSub2Cidr:  10.0.2.0/24
+PrivSub1Cidr: 10.0.3.0/24
+PrivSub2Cidr: 10.0.4.0/24
 
 # Region Name
 region: "us-eat-1"
