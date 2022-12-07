@@ -58,6 +58,19 @@
         resource_tags:
           Name: Project-privsub2
       register: privsub2_out
+    - name: Create IGW setup
+      ec2_vpc_igw:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{region}}"
+        state: "{{state}}"
+        resource_tags:
+          Name: Project-IGW
+      register: igw_out
+
+
+
+
+
 
 
 
