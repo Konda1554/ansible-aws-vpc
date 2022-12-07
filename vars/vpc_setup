@@ -9,7 +9,7 @@ PrivSub1Cidr: 10.0.3.0/24
 PrivSub2Cidr: 10.0.4.0/24
 
 # Region Name
-region: "us-eat-1"
+region: "us-east-1"
 
 # Zone Names
 zone1: us-east-1a
