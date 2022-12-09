@@ -41,17 +41,18 @@
         wait: yes
         wait_timeout: 100
         instance_tags:
-          name: "bastion-host"
+          Name: "bastion_host"
           Project: Public
           Owner: DevOps Team
         exact_count: 1
         count_tag:
-          name: "bastion-host"
+          Name: "bastion_host"
           Project: Public
           Owner: DevOps Team
         group_id: "{{Bastionsg_out.group_id}}"
         subnet_id: "{{pubsub1id}}"
       register: bastionhost_out
+
 
 
 
