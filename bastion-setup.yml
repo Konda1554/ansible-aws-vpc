@@ -50,8 +50,9 @@
           Project: Public
           Owner: DevOps Team
         group_id: "{{Bastionsg_out.group_id}}"
-        subnet_id: "{{pubsub1id}}"
+        vpc_subnet_id: "{{pubsub1id}}"
       register: bastionhost_out
+
 
 
 
