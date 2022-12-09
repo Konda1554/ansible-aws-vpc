@@ -12,6 +12,9 @@
         name: Public-key
         region: "{{region}}"
       register: key_out
+    - debug:
+        var: key_out
+
 
 
 
