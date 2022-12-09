@@ -31,7 +31,7 @@
             from_port: 22
             to_port: 22
             cidr_ip: "{{MYIP}}"
-      register: Bastionsg_out
+        register: Bastionsg_out
     - name: create bastion host ec2
       ec2:
         key_name: Public-key
@@ -40,18 +40,19 @@
         image: "{{bastion_ami}}"
         wait: yes
         wait_timeout: 100
-      instance_tags:
-        name: "bastion-host"
-        Project: Public
-        Owner: DevOps Team
-      exact_count: 1
-      count_tag:
-        name: "bastion-host"
-        Project: Public
-        Owner: DevOps Team
-      group_id: "{{Bastionsg_out.group_id}}"
-      subnet_id: "{{pubsub1id}}"
+        instance_tags:
+          name: "bastion-host"
+          Project: Public
+          Owner: DevOps Team
+        exact_count: 1
+        count_tag:
+          name: "bastion-host"
+          Project: Public
+          Owner: DevOps Team
+        group_id: "{{Bastionsg_out.group_id}}"
+        subnet_id: "{{pubsub1id}}"
       register: bastionhost_out
+
 
 
 
