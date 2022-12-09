@@ -31,7 +31,7 @@
             from_port: 22
             to_port: 22
             cidr_ip: "{{MYIP}}"
-        register: Bastionsg_out
+      register: Bastionsg_out
     - name: create bastion host ec2
       ec2:
         key_name: Public-key
@@ -52,6 +52,7 @@
         group_id: "{{Bastionsg_out.group_id}}"
         subnet_id: "{{pubsub1id}}"
       register: bastionhost_out
+
 
 
 
