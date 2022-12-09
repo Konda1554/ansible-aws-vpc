@@ -113,6 +113,24 @@
         - nat_out.nat_gateway_id
         - privatenat_out.route_table.id
 
+    - set_fact:
+        vpcid: "{{vpcout.vpc.id}}"
+        pubsub1id: "{{ pubsub1_out.subnet.id }}"
+        pubsub2id: "{{ pubsub2_out.subnet.id }}"
+        privsub1id: "{{ privsub1_out.subnet.id }}"
+        privsub2id: "{{ privsub2_out.subnet.id }}"
+        igwid: "{{igw_out.gateway_id}}"
+        pubRT: "{{RT_out.route_table.id}}"
+        natgwid: "{{nat_out.nat_gateway_id}}"
+        privRt: "{{privatenat_out.route_table.id}}"
+        cacheable:  yes
+
+    - name : create copy file vpc output
+      copy:
+        content: "vpcid: {{vpcout.vpc.id}}\npubsub1id: {{ pubsub1_out.subnet.id }}\n pubsub2id: {{ pubsub2_out.subnet.id }}\nprivsub1id: {{ privsub1_out.subnet.id }}\nprivsub2id: {{ privsub2_out.subnet.id }}\nigwid: {{igw_out.gateway_id}}\npubRT: {{RT_out.route_table.id}}\nnatgwid: {{nat_out.nat_gateway_id}}\n privRt: {{privatenat_out.route_table.id}}\n"
+        dest: vars/output_vars
+
+
 
 
 
