@@ -12,8 +12,15 @@
         name: Public-key
         region: "{{region}}"
       register: key_out
-    - debug:
-        var: key_out
+  #  - debug:
+      #  var: key_out
+    - name: save private key as file public.pem
+      copy:
+        content: "{{key_out.key.private_key}}"
+        dest: "./public.pem"
+        mode: 8608
+      when: key_out.changed
+
 
 
 
