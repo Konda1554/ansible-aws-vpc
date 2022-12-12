@@ -65,7 +65,7 @@
 
 
     - name: Create nginx server Webapp o1
-      ec2_instance:
+      ec2:
         Key_name: project key
         region: "{{region}}"
         instance_type: t2.micro
@@ -90,7 +90,7 @@
 
 
     - name: Create tomcat server app o1
-      ec2_instance:
+      ec2:
         Key_name: project key
         region: "{{region}}"
         instance_type: t2.micro
