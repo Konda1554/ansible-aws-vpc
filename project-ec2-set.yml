@@ -180,7 +180,25 @@
         vpc_subnet_id: "{{privsub1id}}"
       register: mysql01_out
     - debug:
-        var: mysql01_out
+        var: mysql01_out.tagged_instances[0].id
+
+    - local_action:
+        module: ec2_elb_lb
+        name: "project-elb"
+        state: "{{state}}"
+        region: "{{region}}"
+        instance_ids:
+          - "{{webapp01_out.tagged_instances[0].id}}"
+        purge_instance_ids: true
+        security_group_ids: "{{Elbsg_out.group_id}}"
+        subnets:
+          - "{{pubsub1id}}"
+          -  "{{pubsub2id}}"
+        listeners:
+          - protocol: http # options are http, https, ssl, tcp
+            load_balancer_port: 80
+            instance_port: 80
+
 
 
 
