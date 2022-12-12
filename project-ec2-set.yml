@@ -79,7 +79,7 @@
           Project: Projectstack
           Owner: DevOps Team
         group_id: "{{projectstack_out.group_id}}"
-        vpc_subnet_id: "{{PrivSub1Cidr}}"
+        vpc_subnet_id: "{{privsub2id}}"
       register: webapp01_out
 
 
@@ -104,8 +104,9 @@
           Project: Projectstack
           Owner: DevOps Team
         group_id: "{{projectstack_out.group_id}}"
-        vpc_subnet_id: "{{PrivSub1Cidr}}"
+        vpc_subnet_id: "{{privsub2id}}"
       register: app01_out
+
 
 
 
