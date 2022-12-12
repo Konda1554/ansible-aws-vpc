@@ -61,6 +61,9 @@
         rules:
           - proto: all
             group_id: "{{projectstack_out.group_id}}"
+
+
+
     - name: Create nginx server Webapp o1
       ec2_instance:
         Key_name: project key
@@ -70,12 +73,12 @@
         wait: yes
         wait_timeout: 100
         instance_tags:
-          Name: webapp01
+          Name: "webapp01"
           Project: Projectstack
           Owner: DevOps Team
         exact_count: 1
         count_tag:
-          Name: webapp01
+          Name: "webapp01"
           Project: Projectstack
           Owner: DevOps Team
         group_id: "{{projectstack_out.group_id}}"
@@ -95,12 +98,12 @@
         wait: yes
         wait_timeout: 100
         instance_tags:
-          Name: app01
+          Name: "app01"
           Project: Projectstack
           Owner: DevOps Team
         exact_count: 1
         count_tag:
-          Name: app01
+          Name: "app01"
           Project: Projectstack
           Owner: DevOps Team
         group_id: "{{projectstack_out.group_id}}"
