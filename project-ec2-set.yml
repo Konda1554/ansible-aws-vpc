@@ -9,7 +9,7 @@
     - name: Import project set up variables
       include_vars: vars/projectstacksetup
     - name: Create Key pair
-      ec2:
+      ec2_key:
         name: project key
         region: "{{region}}"
       register: key_out
@@ -21,6 +21,7 @@
       when: key_out.changed
     - debug:
         var : key_out
+
 
 
 
