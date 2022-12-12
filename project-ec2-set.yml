@@ -65,13 +65,13 @@
 
 
     - name: Create nginx server Webapp o1
-      ec2:
-        Key_name: project key
+      ec2_instance:
+        Key_name: "project key"
         region: "{{region}}"
         instance_type: t2.micro
         image_id: "{{nginx_ami}}"
         wait: yes
-        wait_timeout: 100
+        wait_timeout: 300
         instance_tags:
           Name: "webapp01"
           Project: Projectstack
@@ -82,7 +82,7 @@
           Project: Projectstack
           Owner: DevOps Team
         group_id: "{{projectstack_out.group_id}}"
-        vpc_subnet_id: "{{privsub2id}}"
+        vpc_subnet_id: "{{privsub1id}}"
       register: webapp01_out
 
 
@@ -90,8 +90,8 @@
 
 
     - name: Create tomcat server app o1
-      ec2:
-        Key_name: project key
+      ec2_instance:
+        Key_name: "project key"
         region: "{{region}}"
         instance_type: t2.micro
         image_id: "{{tomcat_ami}}"
@@ -107,7 +107,7 @@
           Project: Projectstack
           Owner: DevOps Team
         group_id: "{{projectstack_out.group_id}}"
-        vpc_subnet_id: "{{privsub2id}}"
+        vpc_subnet_id: "{{privsub1id}}"
       register: app01_out
 
 
