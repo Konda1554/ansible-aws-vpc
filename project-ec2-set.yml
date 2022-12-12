@@ -185,7 +185,7 @@
     - local_action:
         module: ec2_elb_lb
         name: "project-elb"
-        state: "{{state}}"
+        state: present
         region: "{{region}}"
         instance_ids:
           - "{{webapp01_out.tagged_instances[0].id}}"
