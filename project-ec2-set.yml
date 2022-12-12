@@ -5,4 +5,21 @@
   gather_facts: NO
   tasks:
     - name: Import Vpc Variables
-      include_vars: vars/output_vars
+      include_vars: vars/vpc-output_vars
+    - name: Import project set up variables
+      include_vars: vars/projectstacksetup
+    - name: Import Vpc region
+      include_vars: vars/vpc_setup
+    - name: Create Key pair
+      ec2:
+        name: project key
+        region: "{{region}}"
+      register: key_out
+    - name: save the key as a file key.pem
+      copy:
+        content: "{{key_out.key.private_key}}"
+        dest: "./key.pem"
+        mode: 8608
+      when: key_out.changed
+
+
