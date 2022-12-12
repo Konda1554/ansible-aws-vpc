@@ -72,7 +72,7 @@
         Key_name: project key
         region: "{{region}}"
         instance_type: t2.micro
-        image: "{{nginx_ami}}"
+        image_id: "{{nginx_ami}}"
         wait: yes
         wait_timeout: 300
         instance_tags:
@@ -97,7 +97,7 @@
         key_name: project key
         region: "{{region}}"
         instance_type: t2.micro
-        image: "{{tomcat_ami}}"
+        image_id: "{{tomcat_ami}}"
         wait: yes
         wait_timeout: 300
         instance_tags:
