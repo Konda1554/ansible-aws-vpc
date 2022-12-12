@@ -6,8 +6,10 @@
   tasks:
     - name: Import Vpc Variables
       include_vars: vars/vpc-output_vars
+
     - name: Import project set up variables
       include_vars: vars/projectstacksetup
+
     - name: Create Key pair
       ec2_key:
         name: project key
@@ -51,6 +53,7 @@
             to_port: 22
             group_id: "{{Bastiosgid}}"
       register: projectstack_out
+
     - name: Update sg for its own sg id
       ec2_group:
         name: Stack-sg
@@ -91,12 +94,12 @@
 
     - name: Create tomcat server app o1
       ec2:
-        Key_name: project key
+        key_name: project key
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{tomcat_ami}}"
         wait: yes
-        wait_timeout: 100
+        wait_timeout: 300
         instance_tags:
           Name: "app01"
           Project: Projectstack
