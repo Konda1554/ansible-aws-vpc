@@ -115,6 +115,80 @@
 
 
 
+    - name: Create memcache server app o1
+      ec2:
+        key_name: project key
+        region: "{{region}}"
+        instance_type: t2.micro
+        image: "{{memcached_ami}}"
+        wait: yes
+        wait_timeout: 300
+        instance_tags:
+          Name: "mem01"
+          Project: Projectstack
+          Owner: DevOps Team
+        exact_count: 1
+        count_tag:
+          Name: "mem01"
+          Project: Projectstack
+          Owner: DevOps Team
+        group_id: "{{projectstack_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
+      register: mem01_out
+
+
+    - name: Create rmq  server app o1
+      ec2:
+        key_name: project key
+        region: "{{region}}"
+        instance_type: t2.micro
+        image: "{{rmq_ami}}"
+        wait: yes
+        wait_timeout: 300
+        instance_tags:
+          Name: "mem01"
+          Project: Projectstack
+          Owner: DevOps Team
+        exact_count: 1
+        count_tag:
+          Name: "mem01"
+          Project: Projectstack
+          Owner: DevOps Team
+        group_id: "{{projectstack_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
+      register: rmq01_out
+
+
+    - name: Create mysql server app o1
+      ec2:
+        key_name: project key
+        region: "{{region}}"
+        instance_type: t2.micro
+        image: "{{mysql_ami}}"
+        wait: yes
+        wait_timeout: 300
+        instance_tags:
+          Name: "mysql01"
+          Project: Projectstack
+          Owner: DevOps Team
+        exact_count: 1
+        count_tag:
+          Name: "mysql01"
+          Project: Projectstack
+          Owner: DevOps Team
+        group_id: "{{projectstack_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
+      register: mysql01_out
+
+
+
+
+
+
+
+
+
+
 
 
 
