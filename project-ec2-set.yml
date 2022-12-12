@@ -51,6 +51,18 @@
             to_port: 22
             group_id: "{{Bastiosgid}}"
       register: projectstack_out
+    - name: Update sg for its own sg id
+      ec2_group:
+        name: Stack-sg
+        description: allow port 22 from any where and all port with in sg
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules:
+          - proto: all
+            group_id: "{{projectstack_out.group_id}}"
+
+
 
 
 
