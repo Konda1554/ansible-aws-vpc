@@ -1,0 +1,8 @@
+---
+- name: local project stack
+  hosts: localhost
+  connection: local
+  gather_facts: NO
+  tasks:
+    - name: Import Vpc Variables
+      include_vars: vars/output_vars
