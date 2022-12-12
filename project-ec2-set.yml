@@ -19,6 +19,9 @@
         dest: "./key.pem"
         mode: 8608
       when: key_out.changed
+    - debug:
+        var : key_out
+
 
 
 
