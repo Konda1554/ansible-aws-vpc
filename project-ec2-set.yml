@@ -24,9 +24,9 @@
     - name: Create sg for ELB
       ec2_group:
         name: ELB_SG
+        description: Allow  port 80 from  every where and all port within sg
         region: "{{region}}"
         vpc_id: "{{vpcid}}"
-        description: Allow  port 80 from any where and all port within sg
         rules:
           - proto: tcp
             from_port: 80
@@ -61,6 +61,7 @@
         rules:
           - proto: all
             group_id: "{{projectstack_out.group_id}}"
+
 
 
 
