@@ -76,12 +76,12 @@
         wait: yes
         wait_timeout: 300
         instance_tags:
-          Name: "webapp01"
+          name: "webapp01"
           Project: Projectstack
           Owner: DevOps Team
         exact_count: 1
         count_tag:
-          Name: "webapp01"
+          name: "webapp01"
           Project: Projectstack
           Owner: DevOps Team
         group_id: "{{projectstack_out.group_id}}"
@@ -101,12 +101,12 @@
         wait: yes
         wait_timeout: 300
         instance_tags:
-          Name: "app01"
+          name: "app01"
           Project: Projectstack
           Owner: DevOps Team
         exact_count: 1
         count_tag:
-          Name: "app01"
+          name: "app01"
           Project: Projectstack
           Owner: DevOps Team
         group_id: "{{projectstack_out.group_id}}"
