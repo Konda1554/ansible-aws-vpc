@@ -8,8 +8,6 @@
       include_vars: vars/vpc-output_vars
     - name: Import project set up variables
       include_vars: vars/projectstacksetup
-    - name: Import Vpc region
-      include_vars: vars/vpc_setup
     - name: Create Key pair
       ec2:
         name: project key
