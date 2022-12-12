@@ -69,7 +69,7 @@
 
     - name: Create nginx server Webapp o1
       ec2:
-        Key_name: project key
+        key_name: project key
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{nginx_ami}}"
