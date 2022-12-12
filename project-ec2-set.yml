@@ -67,7 +67,7 @@
 
 
 
-    - name: Create nginx server Webapp o1
+    - name: Create nginx server
       ec2:
         key_name: project key
         region: "{{region}}"
@@ -76,12 +76,12 @@
         wait: yes
         wait_timeout: 300
         instance_tags:
-          name: "webapp01"
+          Name: "webapp01"
           Project: Projectstack
           Owner: DevOps Team
         exact_count: 1
         count_tag:
-          name: "webapp01"
+          Name: "webapp01"
           Project: Projectstack
           Owner: DevOps Team
         group_id: "{{projectstack_out.group_id}}"
@@ -92,7 +92,7 @@
 
 
 
-    - name: Create tomcat server app o1
+    - name: Create tomcat server
       ec2:
         key_name: project key
         region: "{{region}}"
@@ -101,12 +101,12 @@
         wait: yes
         wait_timeout: 300
         instance_tags:
-          name: "app01"
+          Name: "app01"
           Project: Projectstack
           Owner: DevOps Team
         exact_count: 1
         count_tag:
-          name: "app01"
+          Name: "app01"
           Project: Projectstack
           Owner: DevOps Team
         group_id: "{{projectstack_out.group_id}}"
@@ -115,7 +115,7 @@
 
 
 
-    - name: Create memcache server app o1
+    - name: Create memcache server
       ec2:
         key_name: project key
         region: "{{region}}"
@@ -146,12 +146,12 @@
         wait: yes
         wait_timeout: 300
         instance_tags:
-          Name: "mem01"
+          Name: "rmq01"
           Project: Projectstack
           Owner: DevOps Team
         exact_count: 1
         count_tag:
-          Name: "mem01"
+          Name: "rmq01"
           Project: Projectstack
           Owner: DevOps Team
         group_id: "{{projectstack_out.group_id}}"
