@@ -137,7 +137,7 @@
       register: mem01_out
 
 
-    - name: Create rmq  server app o1
+    - name: Create rmq  server app
       ec2:
         key_name: project key
         region: "{{region}}"
@@ -159,7 +159,7 @@
       register: rmq01_out
 
 
-    - name: Create mysql server app o1
+    - name: Create mysql server
       ec2:
         key_name: project key
         region: "{{region}}"
@@ -179,6 +179,9 @@
         group_id: "{{projectstack_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: mysql01_out
+    - debug:
+        var: mysql01_out
+
 
 
 
