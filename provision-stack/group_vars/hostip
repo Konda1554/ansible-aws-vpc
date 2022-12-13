@@ -1,0 +1,7 @@
+# BEGIN ANSIBLE MANAGED BLOCK
+webapp01_ip: 10.0.3.200
+app01_ip: 10.0.3.60
+rmq01_ip: 10.0.3.62
+memcache01_ip: 10.0.3.86
+mysql01_ip: 10.0.3.92
+# END ANSIBLE MANAGED BLOCK
