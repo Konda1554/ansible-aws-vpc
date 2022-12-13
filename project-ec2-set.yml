@@ -213,7 +213,7 @@
     - name: copy login key to provision-stack directory
       copy:
         src: key.pem
-        dest: provision_satck/key.pem
+        dest: provision-stack/key.pem
         mode: '0400'
 
     - name: Insert/Update Host IPs & Name in file provision-stack/inventory-project
