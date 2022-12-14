@@ -11,7 +11,7 @@
           {{webapp01_ip}} webapp01
           {{app01_ip}} app01
           {{rmq01_ip}} rmq01
-          {{memcache01_ip}} mem01
+          {{memcache01_ip}} memcache01
           {{mysql01_ip}} mysql01
           
           
