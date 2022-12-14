@@ -13,3 +13,4 @@
           {{rmq01_ip}} rmq01
           {{mem01_ip}} mem01
           {{mysql01_ip}} mysql01
+          
