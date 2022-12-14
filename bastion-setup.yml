@@ -9,7 +9,7 @@
 
     - name: Create Public ec2 key
       ec2_key:
-        name: Public-key
+        name: publickey
         region: "{{region}}"
       register: key_out
   #  - debug:
@@ -34,7 +34,7 @@
       register: Bastionsg_out
     - name: create bastion host ec2
       ec2:
-        key_name: Public-key
+        key_name: publickey
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{bastion_ami}}"
